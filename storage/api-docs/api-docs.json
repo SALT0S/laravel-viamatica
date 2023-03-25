@@ -1,0 +1,470 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api para Viamatica",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/clientes": {
+            "get": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Obtiene la lista de clientes",
+                "operationId": "de55d50d1b708d9e5c63ee3f8fe8f54a",
+                "responses": {
+                    "200": {
+                        "description": "Lista de clientes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Cliente"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Crea un nuevo cliente",
+                "operationId": "4ac6cdfa8d6c188fa2cb4f3263d4318a",
+                "requestBody": {
+                    "description": "Datos del cliente",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cliente"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Cliente creado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/clientes/{id}": {
+            "get": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Obtiene un cliente por ID",
+                "operationId": "0d3826d79390929601421b5810b61231",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cliente encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Actualiza un cliente por ID",
+                "operationId": "74956b09f3ea120b5dd531c73776ca11",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Datos del cliente",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cliente"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cliente actualizado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Clientes"
+                ],
+                "summary": "Elimina un cliente por ID",
+                "operationId": "d15e304c609752c9f409ab81072fb52e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Cliente eliminado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Cliente"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/ordens": {
+            "get": {
+                "tags": [
+                    "Ordenes"
+                ],
+                "summary": "Obtiene la lista de órdenes",
+                "operationId": "88afa9af172a1ab3ca48c7cdc119b40d",
+                "responses": {
+                    "200": {
+                        "description": "Lista de órdenes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Orden"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Ordenes"
+                ],
+                "summary": "Crea una nueva orden",
+                "operationId": "471dd12b303ed926faf9557ff12da380",
+                "requestBody": {
+                    "description": "Datos de la orden",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Orden"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Orden creada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Orden"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/ordens/{id}": {
+            "get": {
+                "tags": [
+                    "Ordenes"
+                ],
+                "summary": "Obtiene una orden por ID",
+                "operationId": "d04db4944a699d7305a79035c34b109d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la orden",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Orden encontrada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Orden"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Ordenes"
+                ],
+                "summary": "Actualiza una orden por ID",
+                "operationId": "98696c12962d010964c9886691c349d6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la orden",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Datos de la orden",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Orden"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Orden actualizada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Orden"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Ordenes"
+                ],
+                "summary": "Elimina una orden por ID",
+                "operationId": "64279676150cb544fa545db33d4dd75f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la orden",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Orden eliminada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Orden"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/ordenes/entregados/{cedula}": {
+            "get": {
+                "tags": [
+                    "Ordenes"
+                ],
+                "summary": "Obtener órdenes entregadas por número de cédula",
+                "operationId": "f95ff6b054c1218164f9744395a715bd",
+                "parameters": [
+                    {
+                        "name": "cedula",
+                        "in": "path",
+                        "description": "Número de cédula del cliente",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ordenes": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Orden"
+                                            }
+                                        },
+                                        "cantidad": {
+                                            "description": "Cantidad de órdenes entregadas",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No se encontraron órdenes entregadas para la cédula proporcionada"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cliente": {
+                "required": [
+                    "identificacion",
+                    "nombres",
+                    "apellidos",
+                    "correo",
+                    "celular",
+                    "estado"
+                ],
+                "properties": {
+                    "identificacion": {
+                        "type": "string",
+                        "example": "1234567890"
+                    },
+                    "nombres": {
+                        "type": "string",
+                        "example": "José"
+                    },
+                    "apellidos": {
+                        "type": "string",
+                        "example": "Sánchez Saltos"
+                    },
+                    "correo": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "josesansalt@gmail.com"
+                    },
+                    "celular": {
+                        "type": "string",
+                        "example": "0983595470"
+                    },
+                    "estado": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "fecha_creacion": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    },
+                    "fecha_actualizacion": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    }
+                },
+                "type": "object"
+            },
+            "Orden": {
+                "required": [
+                    "id_cliente",
+                    "id_estado_orden",
+                    "nro_orden",
+                    "valor_pagar",
+                    "detalle",
+                    "estado"
+                ],
+                "properties": {
+                    "id_cliente": {
+                        "type": "string",
+                        "example": "1234567890"
+                    },
+                    "id_estado_orden": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "nro_orden": {
+                        "type": "string",
+                        "example": "O12345"
+                    },
+                    "valor_pagar": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 100.5
+                    },
+                    "detalle": {
+                        "type": "string",
+                        "example": "Descripción de la orden"
+                    },
+                    "estado": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "fecha_creacion": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    },
+                    "fecha_actualizacion": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

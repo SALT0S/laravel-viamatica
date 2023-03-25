@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: Mi API
+  description: Descripción de mi API
+  version: 1.0.0
+servers:
+  - url: '{app.env("L5_SWAGGER_CONST_HOST")}'
+paths: {}
+
+components:
+  schemas: {}
+
+tags:
+  - name: Clientes
+    description: Operaciones relacionadas con los clientes
+  - name: Ordenes
+    description: Operaciones relacionadas con las ordenes
